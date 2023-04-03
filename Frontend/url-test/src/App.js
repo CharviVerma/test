@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.scss';
+import {Routes,Route} from 'react-router-dom';
+import Home from "./Components/Home/index.js";
+import BootStrap from "bootstrap";
+
 
 function App() {
   return (
-    <div className="App">
-     <p>Okay got it</p>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          {/* <Route index element={<checkUrl />} /> */}
+        </Route>
+      </Routes>
   );
 }
 
