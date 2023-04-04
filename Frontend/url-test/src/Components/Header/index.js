@@ -2,7 +2,8 @@ import "./style.scss";
 
 import React from "react";
 
-const Home = () => {
+
+const Header = () => {
   return <div class="nav-header shadow-sm">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -22,4 +23,4 @@ const Home = () => {
   </div>
 };
 
-export default Home;
+export default Header;
