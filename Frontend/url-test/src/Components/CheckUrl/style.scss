@@ -54,9 +54,28 @@ p{
         margin-left: 35px;
         width: 500px;
         border-radius: 3px;
+        border: none;
+    }
+
+    .time {
+        color: #888;
+        font-size: 18px;
+        font-weight: 300;
+        height: 52px;
+        margin-bottom: 6px;
+        margin-top: 6px;
+        text-align: left;
+        margin-left: 4px;
+        width: 60px;
+        border-radius: 3px;
+        border: none;
     }
 
     .Signup.btn.btn-success{
         margin-bottom: 6px;
         margin-left: 35px;
+    }
+
+    .enter{
+        display: flex;
     }

@@ -8,11 +8,13 @@ const checkUrl = () => {
         <h2>CHECK YOUR WEBLINK HERE</h2>
         <p>This tool helps you identify broken links in your webpage.</p>
         <div><span class="toolstext">Domain Name</span></div>
-    <div>
+    <div class="enter">
     <input tabindex="1" type="text" value="    enter url" 
     class="host_name" name="hostName" id="hostName" autofocus="" autocorrect="off" autocapitalize="none"></input>
-    <button class="Signup btn btn-success"><a class="nav-link text-white p-0"  href="#">Go</a></button>
+    <input tabindex="1" type="text" value="  time" 
+    class="time" name="hostName" id="hostName" autofocus="" autocorrect="off" autocapitalize="none"></input>
     </div>
+    <button class="Signup btn btn-success"><a class="nav-link text-white p-0"  href="#">Go</a></button>
     </div>
 </div>
 };
