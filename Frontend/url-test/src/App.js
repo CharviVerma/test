@@ -1,7 +1,7 @@
 import './App.scss';
 import {Routes,Route} from 'react-router-dom';
-import Home from "./Components/Home/index.js";
-import BootStrap from "bootstrap";
+import Home from "./Components/Header/index.js";
+
 
 
 function App() {
