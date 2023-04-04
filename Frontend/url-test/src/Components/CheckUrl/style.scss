@@ -6,6 +6,7 @@
     height: auto;
     background: none repeat scroll 0 0 rgb(86, 86, 88);
     border-bottom: 1px solid rgb(221, 221, 221);
+    height: 282px;
 }
 
 h2{
@@ -13,11 +14,13 @@ h2{
     font-weight: lighter;
     color: #FFFFFF;
     font-size: 3rem;
+    padding-top: 30px;
 }
 
 p{
     text-align: center;
     color: #8c8989;
+    font-size: 20px;
 }
 
 #check_url{
@@ -65,8 +68,8 @@ p{
         margin-bottom: 6px;
         margin-top: 6px;
         text-align: left;
-        margin-left: 4px;
-        width: 66px;
+        margin-left: 6px;
+        width: 67px;
         border-radius: 3px;
         border: none;
     }
