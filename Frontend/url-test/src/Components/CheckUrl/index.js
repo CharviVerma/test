@@ -11,8 +11,11 @@ const checkUrl = () => {
     <div class="enter">
     <input tabindex="1" type="text" value="    enter url" 
     class="host_name" name="hostName" id="hostName" autofocus="" autocorrect="off" autocapitalize="none"></input>
-    <input tabindex="1" type="text" value="  time" 
-    class="time" name="hostName" id="hostName" autofocus="" autocorrect="off" autocapitalize="none"></input>
+<select name="dog-names" class="time">
+    <option value="">1 Sec</option>
+  <option value="">1 Min</option>
+  <option value="">1 Hour</option>
+</select>
     </div>
     <button class="Signup btn btn-success"><a class="nav-link text-white p-0"  href="#">Go</a></button>
     </div>
