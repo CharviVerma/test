@@ -1,6 +1,9 @@
 import "./style.scss";
 import React  from 'react';
 const table = () => {
+
+  const blog = "bsayadywfdytwf"
+  console.log(blog);
     
   return <div id="theDiv">
     <div class="Results">
