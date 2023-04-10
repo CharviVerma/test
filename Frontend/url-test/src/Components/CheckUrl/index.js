@@ -1,7 +1,7 @@
 import "./style.scss";
 import React  from 'react';
 const checkUrl = () => {
-    
+  
   return <div>
   <div id="middle">
     <div id="check_url"></div>
@@ -13,7 +13,9 @@ const checkUrl = () => {
     class="host_name" name="hostName" id="hostName" autofocus="" autocorrect="off" autocapitalize="none"></input>
 <select name="dog-names" class="time">
     <option value="">1 Sec</option>
+    <option value="">10 Sec</option>
   <option value="">1 Min</option>
+  <option value="">10 Min</option>
   <option value="">1 Hour</option>
 </select>
     </div>
