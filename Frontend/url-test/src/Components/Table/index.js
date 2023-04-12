@@ -1,9 +1,7 @@
 import "./style.scss";
 import React  from 'react';
 const table = () => {
-
-  const log = "bwydgywf"
-  console.log(log);    
+     
   return <div id="theDiv">
     <div class="Results">
     <p class="heading">Last 10 Test Results</p>
