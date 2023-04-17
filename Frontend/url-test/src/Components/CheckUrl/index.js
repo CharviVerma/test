@@ -1,6 +1,8 @@
 import "./style.scss";
 import React  from 'react';
 const checkUrl = () => {
+
+  
   
   return <div>
   <div id="middle">

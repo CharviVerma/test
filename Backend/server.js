@@ -1,27 +1,45 @@
-const express= require('express');
-const cors = require('cors');
-var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-  console.log("connected");
-});
-
-exports.test = function(req,res) {
-  res.render('test');
-};
-
-require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const { ApolloServer, gql } = require('apollo-server-express');
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = 3000;
 
-app.use(cors());
-app.use(express.json());
-
+mongoose.connect('<mongo_db_url>', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log('Connected to MongoDB');
+}).catch((error) => {
+  console.log('Error connecting to MongoDB:', error);
+});
 
 app.listen(port, () => {
-    console.log(`server is running on port: ${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
+
+const typeDefs = gql`
+  type ResponseTime {
+    id: ID!
+    url: String!
+    responseTime: Int!
+    timestamp: String!
+  }
+
+  type Query {
+    responseTimes: [ResponseTime]
+  }
+`;
+
+const resolvers = {
+  Query: {
+    responseTimes: async () => {
+      const ResponseTime = mongoose.model('ResponseTime');
+      return await ResponseTime.find();
+    }
+  }
+};
+
+const server = new ApolloServer({ typeDefs, resolvers });
+server.applyMiddleware({ app, path: '/graphql' });
