@@ -1,4 +1,3 @@
-
 const express = require('express');
 const mongoose = require('mongoose');
 const { ApolloServer, gql } = require('apollo-server-express');
