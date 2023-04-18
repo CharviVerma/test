@@ -21,7 +21,8 @@ function ResponseTimeChecker() {
             const endTime = Date.now();
             const timeTaken = endTime - startTime;
             setResponseTime(`${timeTaken} ms`);
-            
+
+            // Save data to MongoDB
             const client = await MongoClient.connect('<mongo_db_url>');
             const db = client.db('<db_name>');
             const collection = db.collection('responseTimes');
