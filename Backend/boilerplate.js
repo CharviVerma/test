@@ -8,7 +8,7 @@ function ResponseTimeChecker() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setResponseTime('Checking...');
+    setResponseTime('Checking...............');
   };
 
   useEffect(() => {
