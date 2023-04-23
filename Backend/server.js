@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const UrlResponse = require('./models/UrlResponse');
 
 const app = express();
-const port = 3000;
+const port = 3100;
 app.use(bodyParser.json());
 
 mongoose.connect('<mongo_db_url>', {
