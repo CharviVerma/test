@@ -2,12 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const UrlResponse = require('./models/UrlResponse');
+const UrlInterval = require('./models/UrlInterval');
 
 const app = express();
 const port = 3100;
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://starktushar:rJTMupCqptFxfbBp@cluster0.hbu03zg.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect("localhost:27107/mydb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
@@ -15,6 +16,7 @@ mongoose.connect('mongodb+srv://starktushar:rJTMupCqptFxfbBp@cluster0.hbu03zg.mo
 }).catch((error) => {
   console.log('Error connecting to MongoDB:', error);
 });
+// db.createCollection('users', function(err, collection) {});
 
 app.post('/url-interval', async (req, res) => {
   try {
@@ -50,7 +52,7 @@ app.get('/url-responses/all', async (req, res) => {
 
 app.get('/url-entries', async (req, res) => {
   try {
-    const urlIntervels = await urlIntervel.find();
+    const urlIntervels = await UrlIntervel.find();
     res.json(urlIntervels);
   } catch (error) {
     console.error(error);
