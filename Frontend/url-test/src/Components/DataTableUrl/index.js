@@ -28,9 +28,7 @@ const UrlTable = () => {
               <tr>
                 <th>#</th>
                 <th>URL</th>
-                <th>Timestamp</th>
-                <th>Response Time</th>
-                <th>Status</th>
+                <th>Time</th>
               </tr >
             </thead>
             <tbody>
@@ -38,9 +36,7 @@ const UrlTable = () => {
                 <tr key={item.id}>
                   <td>{item.index}</td>
                   <td>{item.url}</td>
-                  <td>{item.created_at}</td>
-                  <td>{item.responseTime}</td>
-                  <td>{item.responseStatus}</td>
+                  <td>{item.t}</td>
                 </tr>
               ))}
             </tbody>
