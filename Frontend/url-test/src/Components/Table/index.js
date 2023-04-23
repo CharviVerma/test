@@ -11,7 +11,20 @@ const DataTable = () => {
       const result = await axios.get("/api/data");
       setData(result.data.slice(0, 20));
     };
-    fetchData();
+    try {
+      const response = await axios.post('/api/saveFormData', {
+        url: url,
+        time: time
+      });
+      console.log(response.data);
+      setNotice('Data saved successfully!');
+      // add any other logic here for handling the response from the server
+    } catch (error) {
+      console.error(error);
+      setNotice('An error occurred while saving the data. Please try again later.');
+      // add any other logic here for handling errors
+    }
+    
   }, []);
 
   const dataWithIndex = data.map((item, index) => ({
