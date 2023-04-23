@@ -10,6 +10,10 @@ const UrlResponseSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    url_interval_id: {
+      type: Schema.Types.ObjectId,
+      ref: 'UrlInterval',
+    },
   },
   {
     timestamps: true,
