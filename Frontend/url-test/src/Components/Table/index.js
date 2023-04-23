@@ -4,19 +4,13 @@ import axios from "axios";
 
 const DataTable = () => {
   const [data, setData] = useState([]);
-  const [notice, setNotice] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("/api/data");
       setData(result.data.slice(0, 20));
     };
-    try {
-      fetchData();
-    } catch (error) {
-      console.error(error);
-      setNotice('An error occurred while Loading the data.');
-    }   
+    fetchData();
   }, []);
 
   const dataWithIndex = data.map((item, index) => ({
@@ -26,7 +20,6 @@ const DataTable = () => {
 
   return (
     <div id="theDiv">
-      {notice && <div className="notice">{notice}</div>}
       <div class="Results">
         <p class="heading">Last 10 Test Results</p>
         <div class="tableHeader"></div>
