@@ -16,15 +16,15 @@ mongoose.connect('<mongo_db_url>', {
   console.log('Error connecting to MongoDB:', error);
 });
 
-app.post('/url-responses', async (req, res) => {
+router.post('/url-interval', async (req, res) => {
   try {
-    const { url, responseTime } = req.body;
-    const urlResponse = new UrlResponse({ url, responseTime });
-    await urlResponse.save();
-    res.sendStatus(201);
-  } catch (error) {
-    console.error(error);
-    res.sendStatus(500);
+    const { url, timeInterval } = req.body;
+    const urlInterval = new UrlInterval({ url, timeInterval });
+    await urlInterval.save();
+    res.status(201).json(urlInterval);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
   }
 });
 

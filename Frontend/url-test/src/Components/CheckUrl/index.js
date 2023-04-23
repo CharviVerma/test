@@ -33,7 +33,7 @@ const CheckUrl = () => {
 
   const saveFormDataToDatabase = async (url, time) => {
     try {
-      const response = await axios.post('/api/saveFormData', {
+      const response = await axios.post('http://localhost:3100/url-data', {
         url: url,
         time: time
       });

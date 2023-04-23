@@ -7,7 +7,7 @@ const DataTable = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("/api/data");
+      const result = await axios.get("http://localhost:3100/url-responses");
       setData(result.data.slice(0, 20));
     };
     fetchData();
@@ -18,8 +18,7 @@ const DataTable = () => {
     index: index + 1,
   }));
 
-  return 
-    <div id="theDiv">
+  return (<div id="theDiv">
       <div class="Results">
         <p class="heading">Last 10 Test Results</p>
         <div class="tableHeader"></div>
@@ -39,7 +38,7 @@ const DataTable = () => {
                 <tr key={item.id}>
                   <td>{item.index}</td>
                   <td>{item.url}</td>
-                  <td>{item.timestamp}</td>
+                  <td>{item.created_at}</td>
                   <td>{item.responseTime}</td>
                   <td>{item.responseStatus}</td>
                 </tr>
@@ -49,6 +48,6 @@ const DataTable = () => {
         </div>
       </div>
     </div>
-};
+)};
 
 export default DataTable;
