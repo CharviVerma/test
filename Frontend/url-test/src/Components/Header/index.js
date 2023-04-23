@@ -1,6 +1,7 @@
 import "./style.scss";
 
 import React from "react";
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -11,10 +12,10 @@ const Header = () => {
     <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
       <li class="nav-item1">
-          <a class="nav-link" href="">Login</a>
+      <Link class="nav-link" to="/">Login</Link>
         </li>
         <li class="nav-item2">
-          <button class="Signup btn btn-success"><a class="nav-link text-white p-0"  href="#">Sign Up</a></button>
+          <button class="Signup btn btn-success"><a class="nav-link text-white p-0"  href="/">Sign Up</a></button>
         </li>
       </ul>
     </div>
