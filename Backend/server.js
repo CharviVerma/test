@@ -1,8 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const UrlResponse = require('./models/UrlResponse');
 const UrlInterval = require('./models/UrlInterval');
+const UrlResponse = require('./models/UrlResponse');
 
 const app = express();
 const port = 3100;
