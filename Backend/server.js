@@ -48,6 +48,15 @@ app.get('/url-responses/all', async (req, res) => {
   }
 });
 
+app.get('/url-entries', async (req, res) => {
+  try {
+    const urlIntervels = await urlIntervel.find();
+    res.json(urlIntervels);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });

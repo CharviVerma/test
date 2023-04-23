@@ -7,7 +7,7 @@ const UrlTable = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:3100/url-responses");
+      const result = await axios.get("http://localhost:3100/url-entries");
       setData(result.data.slice(0, 20));
     };
     fetchData();
@@ -36,7 +36,7 @@ const UrlTable = () => {
                 <tr key={item.id}>
                   <td>{item.index}</td>
                   <td>{item.url}</td>
-                  <td>{item.t}</td>
+                  <td>{item.timeInterval}</td>
                 </tr>
               ))}
             </tbody>
