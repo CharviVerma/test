@@ -8,7 +8,7 @@ const app = express();
 const port = 3100;
 app.use(bodyParser.json());
 
-mongoose.connect("localhost:27107/mydb", {
+mongoose.connect("mongodb://localhost:27107/mydb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
