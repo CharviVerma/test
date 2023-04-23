@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const UrlResponse = require('./models/UrlResponse');
 
 const app = express();
 const port = 3000;
@@ -27,7 +28,25 @@ app.post('/url-responses', async (req, res) => {
   }
 });
 
+app.get('/url-responses', async (req, res) => {
+  try {
+    const urlResponses = await UrlResponse.find().sort({ createdAt: -1 }).limit(20);
+    res.json(urlResponses);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
 
+app.get('/url-responses/all', async (req, res) => {
+  try {
+    const urlResponses = await UrlResponse.find();
+    res.json(urlResponses);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
