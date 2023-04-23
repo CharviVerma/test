@@ -11,6 +11,7 @@ const checkUrl = () => {
         <p>This tool helps you identify broken links in your webpage.</p>
         <div><span class="toolstext">Domain Name</span></div>
     <div class="enter">
+      
     <input tabindex="1" type="text" value="    enter url" 
     class="host_name" name="hostName" id="hostName" autofocus="" autocorrect="off" autocapitalize="none"></input>
 <select name="dog-names" class="time">
