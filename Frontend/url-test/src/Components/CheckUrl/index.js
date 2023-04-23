@@ -5,6 +5,7 @@ import axios from 'axios';
 const CheckUrl = () => {
   const [url, setUrl] = useState("");
   const [time, setTime] = useState(1);
+  const [notice, setNotice] = useState('');
 
   const handleUrlChange = (event) => {
     setUrl(event.target.value);
@@ -18,6 +19,7 @@ const CheckUrl = () => {
     event.preventDefault();
     console.log(`URL: ${url}`);
     console.log(`Time: ${time}`);
+    saveFormDataToDatabase(url, time);
     // Add your own logic here for what to do with the submitted form data
   };
 
@@ -36,9 +38,11 @@ const CheckUrl = () => {
         time: time
       });
       console.log(response.data);
+      setNotice('Data saved successfully!');
       // add any other logic here for handling the response from the server
     } catch (error) {
       console.error(error);
+      setNotice('An error occurred while saving the data. Please try again later.');
       // add any other logic here for handling errors
     }
   };
@@ -46,6 +50,7 @@ const CheckUrl = () => {
   return (
     <div>
       <div id="middle">
+        {notice && <div className="notice">{notice}</div>}
         <div id="check_url"></div>
         <h2>CHECK YOUR WEBLINK HERE</h2>
         <p>This tool helps you identify broken links in your webpage.</p>
