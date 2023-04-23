@@ -20,7 +20,7 @@ const DataTable = () => {
 
   return (<div id="theDiv">
       <div class="Results">
-        <p class="heading">Last 10 Test Results</p>
+        <p class="heading">Last 20 Test Results</p>
         <div class="tableHeader"></div>
         <div>
           <table class="table table-light ">
