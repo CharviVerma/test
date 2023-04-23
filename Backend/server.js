@@ -16,7 +16,7 @@ mongoose.connect('mongodb+srv://starktushar:rJTMupCqptFxfbBp@cluster0.hbu03zg.mo
   console.log('Error connecting to MongoDB:', error);
 });
 
-router.post('/url-interval', async (req, res) => {
+app.post('/url-interval', async (req, res) => {
   try {
     const { url, timeInterval } = req.body;
     const urlInterval = new UrlInterval({ url, timeInterval });
