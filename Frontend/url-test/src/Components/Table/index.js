@@ -18,7 +18,7 @@ const DataTable = () => {
     index: index + 1,
   }));
 
-  return (
+  return 
     <div id="theDiv">
       <div class="Results">
         <p class="heading">Last 10 Test Results</p>
@@ -31,7 +31,7 @@ const DataTable = () => {
                 <th>URL</th>
                 <th>Timestamp</th>
                 <th>Response Time</th>
-              </tr>
+              </tr >
             </thead>
             <tbody>
               {dataWithIndex.map((item) => (
@@ -47,7 +47,6 @@ const DataTable = () => {
         </div>
       </div>
     </div>
-  );
 };
 
 export default DataTable;
