@@ -41,6 +41,7 @@ const DataTable = () => {
                   <td>{item.url}</td>
                   <td>{item.timestamp}</td>
                   <td>{item.responseTime}</td>
+                  <td>{item.responseStatus}</td>
                 </tr>
               ))}
             </tbody>
