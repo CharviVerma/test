@@ -31,6 +31,7 @@ const DataTable = () => {
                 <th>URL</th>
                 <th>Timestamp</th>
                 <th>Response Time</th>
+                <th>Status</th>
               </tr >
             </thead>
             <tbody>
