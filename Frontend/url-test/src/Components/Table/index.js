@@ -4,8 +4,8 @@ import axios from "axios";
 
 const DataTable = () => {
   const [data, setData] = useState([]);
-  const [notice, setNotice] = useState('');
-  
+  const [notice, setNotice] = useState("");
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios.get("/api/data");
@@ -13,6 +13,11 @@ const DataTable = () => {
     };
     fetchData();
   }, []);
+
+  const dataWithIndex = data.map((item, index) => ({
+    ...item,
+    index: index + 1,
+  }));
 
   return (
     <div id="theDiv">
@@ -24,14 +29,16 @@ const DataTable = () => {
           <table class="table table-light ">
             <thead>
               <tr>
+                <th>#</th>
                 <th>URL</th>
                 <th>Timestamp</th>
                 <th>Response Time</th>
               </tr>
             </thead>
             <tbody>
-              {data.map((item) => (
+              {dataWithIndex.map((item) => (
                 <tr key={item.id}>
+                  <td>{item.index}</td>
                   <td>{item.url}</td>
                   <td>{item.timestamp}</td>
                   <td>{item.responseTime}</td>
