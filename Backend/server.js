@@ -18,7 +18,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
 });
 // db.createCollection('users', function(err, collection) {});
 
-app.post('/url-interval', async (req, res) => {
+app.post('/url-', async (req, res) => {
   try {
     const { url, timeInterval } = req.body;
     const urlInterval = new UrlInterval({ url, timeInterval });
@@ -52,8 +52,8 @@ app.get('/url-responses/all', async (req, res) => {
 
 app.get('/url-entries', async (req, res) => {
   try {
-    const urlIntervels = await UrlIntervel.find();
-    res.json(urlIntervels);
+    const urlIntervals = await UrlInterval.find();
+    res.json(urlIntervals);
   } catch (error) {
     console.error(error);
     res.sendStatus(500);
