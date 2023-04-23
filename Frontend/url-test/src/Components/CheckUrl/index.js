@@ -1,32 +1,90 @@
 import "./style.scss";
-import React  from 'react';
-const checkUrl = () => {
+import React, { useState } from "react";
+import axios from 'axios';
 
-  
-  
-  return <div>
-  <div id="middle">
-    <div id="check_url"></div>
+const CheckUrl = () => {
+  const [url, setUrl] = useState("");
+  const [time, setTime] = useState(1);
+
+  const handleUrlChange = (event) => {
+    setUrl(event.target.value);
+  };
+
+  const handleTimeChange = (event) => {
+    setTime(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(`URL: ${url}`);
+    console.log(`Time: ${time}`);
+    // Add your own logic here for what to do with the submitted form data
+  };
+
+  const timeOptions = [
+    { value: "1", label: "1 sec" },
+    { value: "10", label: "10 sec" },
+    { value: "60", label: "1 min" },
+    { value: "600", label: "10 mins" },
+    { value: "6000", label: "1 hr" },
+  ];
+
+  const saveFormDataToDatabase = async (url, time) => {
+    try {
+      const response = await axios.post('/api/saveFormData', {
+        url: url,
+        time: time
+      });
+      console.log(response.data);
+      // add any other logic here for handling the response from the server
+    } catch (error) {
+      console.error(error);
+      // add any other logic here for handling errors
+    }
+  };
+
+  return (
+    <div>
+      <div id="middle">
+        <div id="check_url"></div>
         <h2>CHECK YOUR WEBLINK HERE</h2>
         <p>This tool helps you identify broken links in your webpage.</p>
-        <div><span class="toolstext">Domain Name</span></div>
-    <div class="enter">
-      
-    <input tabindex="1" type="text" value="    enter url" 
-    class="host_name" name="hostName" id="hostName" autofocus="" autocorrect="off" autocapitalize="none"></input>
-<select name="dog-names" class="time">
-    <option value="">1 Sec</option>
-    <option value="">10 Sec</option>
-  <option value="">1 Min</option>
-  <option value="">10 Min</option>
-  <option value="">1 Hour</option>
-</select>
+        <div>
+          <span class="toolstext">Domain Name</span>
+        </div>
+        <div class="enter">
+          <form onSubmit={handleSubmit}>
+            <input
+              tabindex="1"
+              type="url"
+              id="urlInput"
+              name="url"
+              class="host_name"
+              value={url}
+              placeholder='Enter URL here'
+              onChange={handleUrlChange}
+              required
+            />
+            <select
+              id="timeSelect"
+              name="time"
+              class="time"
+              value={time}
+              onChange={handleTimeChange}
+            >
+              {timeOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+           
+            </select>
+            <button class="Signup btn btn-success">Go</button>
+          </form>
+        </div>
+      </div>
     </div>
-    <button class="Signup btn btn-success"><a class="nav-link text-white p-0"  href="#">Go</a></button>
-    </div>
-</div>
+  );
 };
 
-export default checkUrl;
-
-
+export default CheckUrl;
