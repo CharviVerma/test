@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { ApolloServer, gql } = require('apollo-server-express');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3000;
+app.use(bodyParser.json());
 
 mongoose.connect('<mongo_db_url>', {
   useNewUrlParser: true,
@@ -14,31 +15,21 @@ mongoose.connect('<mongo_db_url>', {
   console.log('Error connecting to MongoDB:', error);
 });
 
+app.post('/url-responses', async (req, res) => {
+  try {
+    const { url, responseTime } = req.body;
+    const urlResponse = new UrlResponse({ url, responseTime });
+    await urlResponse.save();
+    res.sendStatus(201);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500);
+  }
+});
+
+
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-const typeDefs = gql`
-  type ResponseTime {
-    id: ID!
-    url: String!
-    responseTime: Int!
-    timestamp: String!
-  }
-
-  type Query {
-    responseTimes: [ResponseTime]
-  }
-`;
-
-const resolvers = {
-  Query: {
-    responseTimes: async () => {
-      const ResponseTime = mongoose.model('ResponseTime');
-      return await ResponseTime.find();
-    }
-  }
-};
-
-const server = new ApolloServer({ typeDefs, resolvers });
-server.applyMiddleware({ app, path: '/graphql' });
