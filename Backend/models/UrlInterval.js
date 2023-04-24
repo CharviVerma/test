@@ -16,4 +16,4 @@ const urlIntervalSchema = new mongoose.Schema(
   },
 });
 
-module.exports = = mongoose.model('UrlInterval', urlIntervalSchema);
+module.exports = mongoose.model('UrlInterval', urlIntervalSchema);
