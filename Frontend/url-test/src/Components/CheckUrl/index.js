@@ -4,7 +4,7 @@ import axios from "axios";
 
 const CheckUrl = () => {
   const [url, setUrl] = useState("");
-  const [time, setTime] = useState(1);
+  const [timeInterval, setTimeInterval] = useState(1);
   const [notice, setNotice] = useState("");
 
   const handleUrlChange = (event) => {
@@ -12,14 +12,14 @@ const CheckUrl = () => {
   };
 
   const handleTimeChange = (event) => {
-    setTime(event.target.value);
+    setTimeInterval(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`URL: ${url}`);
-    console.log(`Time: ${time}`);
-    saveFormDataToDatabase(url, time);
+    console.log(`Time: ${timeInterval}`);
+    saveFormDataToDatabase(url, timeInterval);
     // Add your own logic here for what to do with the submitted form data
   };
 
@@ -31,11 +31,11 @@ const CheckUrl = () => {
     { value: "6000", label: "1 hr" },
   ];
 
-  const saveFormDataToDatabase = async (url, time) => {
+  const saveFormDataToDatabase = async (url, timeInterval) => {
     try {
       const response = await axios.post("http://localhost:3000/url-interval", {
         url: url,
-        time: time,
+        timeInterval: timeInterval,
       });
       console.log(response.data);
       setNotice("Data saved successfully!");
@@ -76,7 +76,7 @@ const CheckUrl = () => {
               id="timeSelect"
               name="time"
               className="time"
-              value={time}
+              value={timeInterval}
               onChange={handleTimeChange}
             >
               {timeOptions.map((option) => (
