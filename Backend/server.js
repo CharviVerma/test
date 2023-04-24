@@ -15,7 +15,7 @@ var allowCrossDomain = function(req, res, next) {
 const app = express();
 app.use(allowCrossDomain);
 
-const port = 3100;
+const port = 3000;
 app.use(bodyParser.json());
 
 mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
