@@ -57,16 +57,16 @@ const CheckUrl = () => {
         <h2>CHECK YOUR WEBLINK HERE</h2>
         <p>This tool helps you identify broken links in your webpage.</p>
         <div>
-          <span class="toolstext">Domain Name</span>
+          <span className="toolstext">Domain Name</span>
         </div>
-        <div class="enter">
+        <div className="enter">
           <form onSubmit={handleSubmit}>
             <input
-              tabindex="1"
+              tabIndex="1"
               type="url"
               id="urlInput"
               name="url"
-              class="host_name"
+              className="host_name"
               value={url}
               placeholder="Enter URL here"
               onChange={handleUrlChange}
@@ -75,7 +75,7 @@ const CheckUrl = () => {
             <select
               id="timeSelect"
               name="time"
-              class="time"
+              className="time"
               value={time}
               onChange={handleTimeChange}
             >
@@ -85,7 +85,7 @@ const CheckUrl = () => {
                 </option>
               ))}
             </select>
-            <button class="Signup btn btn-success">Go</button>
+            <button className="Signup btn btn-success">Go</button>
           </form>
         </div>
       </div>
