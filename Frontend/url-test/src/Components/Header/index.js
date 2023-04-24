@@ -11,7 +11,7 @@ const Header = () => {
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
       <img src= {logo} alt='profile picture' width= '50px'></img>
       </a>
       <ul class="navbar-nav">
