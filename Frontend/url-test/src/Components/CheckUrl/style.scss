@@ -1,12 +1,11 @@
 #middle {
     clear: both;
     margin: 0px 0 auto;
-    padding: 0;
+    padding: 20px;
     width: 100%;
     height: auto;
-    background: none repeat scroll 0 0 rgb(86, 86, 88);
+    background: none repeat scroll 0 0 #29585d;
     border-bottom: 1px solid rgb(221, 221, 221);
-    height: 282px;
 }
 
 h2{
@@ -58,6 +57,7 @@ p{
         width: 500px;
         border-radius: 3px;
         border: none;
+        padding: 20px;
     }
 
     .time {
@@ -78,6 +78,7 @@ p{
     .Signup.btn.btn-success{
         margin-bottom: 6px;
         margin-left: 35px;
+        background-color: #848c94;
     }
 
     .enter{
