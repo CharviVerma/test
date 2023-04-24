@@ -2,6 +2,7 @@ import "./style.scss";
 
 import React from "react";
 import { Link } from 'react-router-dom';
+import Logo from './Pink logo.png';
 
 
 const Header = () => {
@@ -10,6 +11,7 @@ const Header = () => {
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
+      <img src="Logo"></img>
       <ul class="navbar-nav">
       <li class="nav-item1">
       <Link class="nav-link" to="/">Login</Link>
