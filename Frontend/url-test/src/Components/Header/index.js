@@ -6,20 +6,20 @@ import logo from './Pink logo.png';
 
 
 const Header = () => {
-  return <div class="nav-header shadow-sm">
+  return <div className="nav-header shadow-sm">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">
-      <img src= {logo} alt='profile' class='profile'></img>
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <a className="navbar-brand" href="/">
+      <img src= {logo} alt='profile' className='profile'></img>
       </a>
-  <div class="container-fluid">
-    <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-      <li class="nav-item1">
-      <Link class="nav-link" to="/">Login</Link>
+  <div className="container-fluid">
+    <div className="collapse justify-content-end navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+      <li className="nav-item1">
+      <Link className="nav-link" to="/">Login</Link>
         </li>
-        <li class="nav-item2">
-          <button class="Signup btn btn-success"><a class="nav-link text-white p-0"  href="/">Sign Up</a></button>
+        <li className="nav-item2">
+          <button className="Signup btn btn-success"><a className="nav-link text-white p-0"  href="/">Sign Up</a></button>
         </li>
       </ul>
     </div>

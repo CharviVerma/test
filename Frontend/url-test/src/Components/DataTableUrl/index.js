@@ -19,11 +19,11 @@ const UrlTable = () => {
   }));
 
   return (<div id="theDiv">
-      <div class="Results">
-        <p class="heading">Last 10 entries</p>
-        <div class="tableHeader"></div>
+      <div className="Results">
+        <p className="heading">Last 10 entries</p>
+        <div className="tableHeader"></div>
         <div>
-          <table class="table table-light ">
+          <table className="table table-light ">
             <thead>
               <tr>
                 <th>#</th>
