@@ -7,7 +7,7 @@ const DataTable = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://localhost:3100/url-responses");
+      const result = await axios.get("http://localhost:3000/url-responses");
       setData(result.data.slice(0, 20));
     };
     fetchData();

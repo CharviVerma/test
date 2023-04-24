@@ -28,7 +28,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
 });
 // db.createCollection('users', function(err, collection) {});
 
-app.post('/url-data', async (req, res) => {
+app.post('/url-interval', async (req, res) => {
   try {
     const { url, timeInterval } = req.body;
     const urlInterval = new UrlInterval({ url, timeInterval });

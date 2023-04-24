@@ -1,11 +1,11 @@
 import "./style.scss";
 import React, { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 const CheckUrl = () => {
   const [url, setUrl] = useState("");
   const [time, setTime] = useState(1);
-  const [notice, setNotice] = useState('');
+  const [notice, setNotice] = useState("");
 
   const handleUrlChange = (event) => {
     setUrl(event.target.value);
@@ -33,16 +33,18 @@ const CheckUrl = () => {
 
   const saveFormDataToDatabase = async (url, time) => {
     try {
-      const response = await axios.post('http://localhost:3100/url-interval', {
+      const response = await axios.post("http://localhost:3000/url-interval", {
         url: url,
-        time: time
+        time: time,
       });
       console.log(response.data);
-      setNotice('Data saved successfully!');
+      setNotice("Data saved successfully!");
       // add any other logic here for handling the response from the server
     } catch (error) {
       console.error(error);
-      setNotice('An error occurred while saving the data. Please try again later.');
+      setNotice(
+        "An error occurred while saving the data. Please try again later."
+      );
       // add any other logic here for handling errors
     }
   };
@@ -66,7 +68,7 @@ const CheckUrl = () => {
               name="url"
               class="host_name"
               value={url}
-              placeholder='Enter URL here'
+              placeholder="Enter URL here"
               onChange={handleUrlChange}
               required
             />
@@ -82,7 +84,6 @@ const CheckUrl = () => {
                   {option.label}
                 </option>
               ))}
-           
             </select>
             <button class="Signup btn btn-success">Go</button>
           </form>
