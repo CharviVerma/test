@@ -9,11 +9,11 @@ const Header = () => {
   return <div class="nav-header shadow-sm">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+      <img src= {logo} alt='profile' class='profile'></img>
+      </a>
   <div class="container-fluid">
     <div class="collapse justify-content-end navbar-collapse" id="navbarNav">
-    <a class="navbar-brand" href="/">
-      <img src= {logo} alt='profile picture' width= '50px'></img>
-      </a>
       <ul class="navbar-nav">
       <li class="nav-item1">
       <Link class="nav-link" to="/">Login</Link>
