@@ -10,7 +10,7 @@ const Header = () => {
 
 <nav className="navbar navbar-expand-lg navbar-light bg-light">
     <a className="navbar-brand" href="/">
-      <img src= {logo} alt='profile' className='profile'></img>
+      {/* <img src= {logo} alt='profile' className='profile'></img> */}
       </a>
   <div className="container-fluid">
     <div className="collapse justify-content-end navbar-collapse" id="navbarNav">
