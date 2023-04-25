@@ -7,3 +7,26 @@
     padding: 20px;
 
 }
+
+#preFooter{
+    border-top: 1px solid #fcfcfc;
+}
+
+.footerbottomleftside{
+    display: flex;
+}
+.footersmalltext{
+    flex: 0 0 auto;
+    font-size: 1vw;
+}
+
+.termcondblock{
+    display: flex;
+    width: 22vw;
+    margin-left: 11vw;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+    font-size: 0.8vw;
+}
