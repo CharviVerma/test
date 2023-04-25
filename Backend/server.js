@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const UrlInterval = require('./models/UrlInterval');
 const UrlResponse = require('./models/UrlResponse');
+const startCronJob = require('./cron');
 
 var allowCrossDomain = function(req, res, next) {
   res.header('Access-Control-Allow-Origin', "*");
@@ -33,6 +34,7 @@ app.post('/url-interval', async (req, res) => {
     const { url, timeInterval } = req.body;
     const urlInterval = new UrlInterval({ url, timeInterval });
     await urlInterval.save();
+    startCronJob(urlInterval);
     res.status(201).json(urlInterval);
   } catch (err) {
     console.error(err);
