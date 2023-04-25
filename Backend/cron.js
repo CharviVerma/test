@@ -1,7 +1,7 @@
 const cron = require('node-cron');
 const request = require('request-promise-native');
 const { performance } = require('perf_hooks');
-const NUM_JOBS = 20
+const NUM_JOBS = 2
 
 module.exports = async function startCronJob(urlInterval) {
   const { url, timeInterval } = urlInterval;
