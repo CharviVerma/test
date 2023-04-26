@@ -1,6 +1,8 @@
 const cron = require('node-cron');
 const request = require('request-promise-native');
 const { performance } = require('perf_hooks');
+const UrlInterval = require('./models/UrlInterval');
+const UrlResponse = require('./models/UrlResponse');
 const NUM_JOBS = 2
 
 module.exports = async function startCronJob(urlInterval) {
@@ -17,7 +19,7 @@ module.exports = async function startCronJob(urlInterval) {
 
         const responseTime = endTime - startTime;
 
-        const responseUrl = new ResponseUrl({
+        const urlResponse = new UrlResponse({
           url: url,
           responseTime: responseTime,
           url_interval_id: urlInterval._id,
@@ -25,7 +27,7 @@ module.exports = async function startCronJob(urlInterval) {
         });
 
         // Save the response URL object to the database
-        await responseUrl.save();
+        await urlResponse.save();
 
         console.log(`Checked URL ${url} at ${new Date()}, response time: ${responseTime}ms`);
       } catch (err) {
