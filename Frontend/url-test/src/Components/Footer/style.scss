@@ -18,8 +18,9 @@
 .footersmalltext{
     flex: 0 0 auto;
     font-size: 1vw;
-    padding-top: 20px;
     font-weight: 600;
+    padding-top: 20px;
+    font-family: Whyte, sans-serif;
 }
 
 .termcondblock{
@@ -31,4 +32,12 @@
     -webkit-box-flex: 0;
     flex: 0 0 auto;
     font-size: 0.8vw;
+}
+
+.footerlink{
+    flex: 0 0 auto;
+    color: #fcfcfc;
+    font-size: 1vw;
+    text-transform: uppercase;
+    padding-top: 20px;
 }
