@@ -4,7 +4,7 @@ import logo from './first.png';
 const table = () => {
   return <div id="footer_section">
     <div id="footerMainRow">
-    <img src= {logo} alt='profile' className='profile'></img>
+    {/* <img src= {logo} alt='profile' className='profile'></img> */}
     </div>
     <div id="preFooter">
     <div class="footerbottomleftside">
