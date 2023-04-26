@@ -11,8 +11,10 @@ const Home = () => {
     <div>
     <Header />
     <CheckUrl />
+    <div className="table_scroll">
     <DataTable />
     <DataTableUrl />
+    </div>
     <Footer />
 
 </div>

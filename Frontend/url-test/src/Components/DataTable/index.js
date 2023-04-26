@@ -22,7 +22,7 @@ const DataTable = () => {
       <div className="Results">
         <p className="heading">Last 20 Test Results</p>
         <div className="tableHeader"></div>
-        <div>
+        <div className="tableTwo">
           <table className="table table-light ">
             <thead>
               <tr>
