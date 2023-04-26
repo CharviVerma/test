@@ -22,7 +22,7 @@ const UrlTable = () => {
       <div className="Results">
         <p className="heading">Last 10 entries</p>
         <div className="tableHeader"></div>
-        <div>
+        <div className="tableTwo">
           <table className="table table-light ">
             <thead>
               <tr>
