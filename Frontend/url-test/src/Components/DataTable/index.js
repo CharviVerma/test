@@ -24,7 +24,7 @@ const DataTable = () => {
         <div className="tableHeader"></div>
         <div className="tableTwo">
           <table className="table table-light ">
-            <thead>
+            <thead id="header">
               <tr>
                 <th>#</th>
                 <th>URL</th>

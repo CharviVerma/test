@@ -20,11 +20,11 @@ const UrlTable = () => {
 
   return (<div id="theDiv">
       <div className="Results">
-        <p className="heading">Last 10 entries</p>
+        <p className="heading">Last 10 Entries</p>
         <div className="tableHeader"></div>
         <div className="tableTwo">
           <table className="table table-light ">
-            <thead>
+            <thead id="header">
               <tr>
                 <th>#</th>
                 <th>URL</th>
