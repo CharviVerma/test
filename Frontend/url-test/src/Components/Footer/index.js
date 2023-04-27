@@ -4,17 +4,18 @@ import logo from './first.png';
 const table = () => {
   return <div id="footer_section">
     <div id="footerMainRow">
-      <div>
-    <img src= {logo} alt='profile' className='profile'></img>
-    <p>Lessssssgooooooooooooooooooooooo</p>
+    <div className="container">
+      <div className="row">
+      <div className="col-lg-4"><img src= {logo} alt='profile' className='profile'></img></div>
+      <div className="col-lg-4"><p>Lessssssgooooooooooooooooooooooo</p></div>
+      <div className="col-lg-4"><p>hghgjhgjhgjhgjgjg</p></div>
+      </div>
     </div>
     <div>
-    <img src= {logo} alt='profile' className='profile'></img>
-    <p>Lessssssgooooooooooooooooooooooo</p>
+  
     </div>
     <div>
-    <img src= {logo} alt='profile' className='profile'></img>
-    <p>Lessssssgooooooooooooooooooooooo</p>
+    
     </div>
     </div>
     <div id="preFooter">

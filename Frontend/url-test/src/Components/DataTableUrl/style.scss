@@ -11,7 +11,10 @@
     margin-bottom: 15px; 
     font-size:15px;
 }
-
+#header{
+    position: sticky;
+    top: 0;
+}
 .table.table-light header th{
     background-color: #242329;
     color: white;

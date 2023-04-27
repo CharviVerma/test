@@ -10,7 +10,10 @@
     color: white!important;
     
 }
-
+#header{
+    position: sticky;
+    top: 0;
+}
 .Results{
     float: left; 
     margin-top: 10px; 
