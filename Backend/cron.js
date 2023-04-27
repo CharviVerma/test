@@ -3,13 +3,12 @@ const request = require('request-promise-native');
 const { performance } = require('perf_hooks');
 const UrlInterval = require('./models/UrlInterval');
 const UrlResponse = require('./models/UrlResponse');
-const NUM_JOBS = 2
+let numJobs = 2
 
 module.exports = async function startCronJob(urlInterval) {
   const { url, timeInterval } = urlInterval;
 
-  for (let i = 1; i <= NUM_JOBS; i++) {
-    cron.schedule(`*/${timeInterval} * * * * *`, async () => {
+    const task = cron.schedule(`*/${timeInterval} * * * * *`, async () => {
       try {
         const startTime = performance.now();
 
@@ -26,13 +25,15 @@ module.exports = async function startCronJob(urlInterval) {
           createdAt: new Date(),
         });
 
-        // Save the response URL object to the database
         await urlResponse.save();
 
         console.log(`Checked URL ${url} at ${new Date()}, response time: ${responseTime}ms`);
       } catch (err) {
         console.error(err);
       }
+      numJobs--;
+      if(numJobs == 0){
+        task.stop()
+      }
     });
-  }
 };
