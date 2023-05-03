@@ -8,13 +8,14 @@ return(
             <div className="form-fields">
                 <fieldset>
                     <label for="login">Username or Email Address</label>
-                    <input/>
+                    <input type="text" classname="username" id="username"/>
                 </fieldset>
                 <fieldset>
-                    <label></label>
-                    <input/>
+                    <label for="password" className="password" id="password">Password</label>
+                    <input type="password" className="password" id="password"/>
                 </fieldset>
             </div>
+            <input/>
 
         </form>
     </div>

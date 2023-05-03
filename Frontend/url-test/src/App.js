@@ -12,7 +12,9 @@ function App() {
         <Route path="/" element={<Home />}>,\
           {/* <Route index element={<checkUrl />} /> */}
         </Route>
-        <Route path="/" element={<CheckUrl />}>
+        <Route path="/CheckUrl" element={<CheckUrl />}>
+        </Route>
+        <Route path="/login" element={<CheckUrl />}>
         </Route>
       </Routes>
   );
