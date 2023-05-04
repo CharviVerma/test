@@ -17,6 +17,7 @@ module.exports = async function startCronJob(urlInterval) {
         const endTime = performance.now();
 
         const responseTime = endTime - startTime;
+        console.log(response)
         const responseStatus = response.statusCode;
 
         const urlResponse = new UrlResponse({
