@@ -17,10 +17,12 @@ module.exports = async function startCronJob(urlInterval) {
         const endTime = performance.now();
 
         const responseTime = endTime - startTime;
+        const responseStatus = response.statusCode;
 
         const urlResponse = new UrlResponse({
           url: url,
           responseTime: responseTime,
+          responseStatus: responseStatus,
           url_interval_id: urlInterval._id,
           createdAt: new Date(),
         });

@@ -13,10 +13,25 @@ const DataTable = () => {
     fetchData();
   }, []);
 
+  function formatDate(date) {
+    try {
+    return date.toLocaleString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true,
+    });}
+    catch(error) {
+console.log(error)
+    }
+  }
   const dataWithIndex = data.map((item, index) => ({
     ...item,
     index: index + 1,
   }));
+  console.log(data);
 
   return (<div id="theDiv">
       <div className="Results">
@@ -38,8 +53,8 @@ const DataTable = () => {
                 <tr key={item.id}>
                   <td>{item.index}</td>
                   <td>{item.url}</td>
-                  <td>{item.created_at}</td>
-                  <td>{item.responseTime}</td>
+                  <td>{formatDate(item.createdAt)}</td>
+                  <td>{Math.round(item.responseTime)}</td>
                   <td>{item.responseStatus}</td>
                 </tr>
               ))}
