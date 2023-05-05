@@ -1,8 +1,15 @@
 import "./style.scss";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import logo from './pretty.png';
 
 const Signup = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        console.log(email, password);
+    }
+
     // const form = document.getElementById('sign-in-form')
     // form.addEventListener('submit', signInUser)
     // async function signInUser(event){
@@ -28,15 +35,21 @@ return(
     <div className="first form col-lg-9">
         <div className="row box">
             <div className="col-lg-6">
-        <form action="session/" method="post" id="sign-in-form">
+        <form action="session/" method="post" id="sign-in-form" onSubmit={handleSubmit}>
             <div className="form-fields">
                 <fieldset>
-                    <label for="login">Username or Email Address</label>
-                    <input type="text" placeholder="username" autocomplete="off" classname="username" id="username"/>
+                    <label for="Username">Username or Email Address</label>
+                    <input type="text" placeholder="username" autocomplete="off" classname="username" id="username"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                    />
                 </fieldset>
                 <fieldset>
                     <label for="password" className="password" id="password">Password</label>
-                    <input type="password" placeholder="password" autocomplete="off" className="password" id="password"/>
+                    <input type="password" placeholder="password" autocomplete="off" className="password" id="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    value={password}
+                    />
                 </fieldset>
             </div>
             <input type="submit" className="button form-sub" value="Sign In" data-cypress="submit-sign-in-btn"/>
