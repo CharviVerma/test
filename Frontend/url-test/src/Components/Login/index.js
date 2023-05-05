@@ -52,7 +52,7 @@ return(
                     />
                 </fieldset>
             </div>
-            <input type="submit" className="button form-sub" value="Sign In" data-cypress="submit-sign-in-btn"/>
+            <input type="submit" className="button form-sub" value="Login" data-cypress="submit-sign-in-btn"/>
 
         </form>
         </div>
