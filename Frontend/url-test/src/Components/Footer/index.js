@@ -20,9 +20,9 @@ const table = () => {
         </form>
       </div>
       <div className="col-lg-4">
-        <p>Sid loves hardik</p>
-        <p>awwwwwwwwwwwwwwwwwwwwwwwww</p>
-        <p>So sweeeeeeeeetttttttt</p>
+        <p></p>
+        <p></p>
+        <p></p>
         </div>
       </div>
     </div>
