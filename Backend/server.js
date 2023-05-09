@@ -13,6 +13,21 @@ var allowCrossDomain = function(req, res, next) {
 }
 
 
+async function makeRequest() {
+  try {
+    const response = await fetch('https://randomuser.me/api/');
+
+    console.log('response.status: ', response.status); // 👉️ 200
+    console.log(response);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+makeRequest();
+
+
+
 const app = express();
 app.use(allowCrossDomain);
 
@@ -58,7 +73,7 @@ app.get('/url-responses/all', async (req, res) => {
     res.json(urlResponses);
   } catch (error) {
     console.error(error);
-    res.sendStatus(500);
+    res.sendStatus(200);
   }
 });
 
