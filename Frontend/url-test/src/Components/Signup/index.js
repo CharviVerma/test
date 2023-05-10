@@ -47,7 +47,7 @@ return(
                 </fieldset>
                 <fieldset>
                     <label for="password" className="password" id="password">Password</label>
-                    <input type="password" placeholder="Password" autocomplete="off" className="password" id="p      assword"
+                    <input type="password" placeholder="Password" autocomplete="off" className="password" id="password"
                     />
                 </fieldset>
             </div>
