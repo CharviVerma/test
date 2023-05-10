@@ -10,29 +10,29 @@ const Signup = () => {
     //     console.log(email, password);
     // }
 
-    const form = document.getElementById('sign-in-form')
-    form.addEventListener('submit', signInUser)
-    async function signInUser(event){
-        event.preventDefault()
-        const username = document.getElementById('username').value
-        const password = document.getElementById('password').value
+    // const form = document.getElementById('sign-in-form')
+    // form.addEventListener('submit', signInUser)
+    // async function signInUser(event){
+    //     event.preventDefault()
+    //     const username = document.getElementById('username').value
+    //     const password = document.getElementById('password').value
 
-        const result = await fetch('/api/signin', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                username,
-                password
-            })
-        }).then((res) => res.json())
-        console.log(result);
-    }
+    //     const result = await fetch('/api/signin', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             username,
+    //             password
+    //         })
+    //     }).then((res) => res.json())
+    //     console.log(result);
+    // }
 return(
     <div className="container">
         <div className="row justify-content-center">
-    <div className="first form col-lg-9">
+    <div className="first form col-lg-8">
         <div className="row box">
             <div className="col-lg-6">
         <form action="session/" method="post" id="sign-in-form">
