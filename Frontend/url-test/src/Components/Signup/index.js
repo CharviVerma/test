@@ -6,13 +6,14 @@ const Signup = () => {
 
 
     const form = document.getElementById('sign-in-form')
-    form.addEventListener('submit', signInUser)
-    async function signInUser(event){
-        event.preventDefault()
-        const username = document.getElementById('Username').value
-        const password = document.getElementById('Password').value
+    form.addEventListener('submit', registerUser)
 
-        const result = await fetch('/api/signin', {
+    async function registerUser(event) {
+        event.preventDefault()
+        const username = document.getElementById('username').value
+        const password = document.getElementById('password').value
+
+        const result = await fetch('/api/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -22,7 +23,13 @@ const Signup = () => {
                 password
             })
         }).then((res) => res.json())
-        console.log(result);
+
+        if (result.status === 'ok') {
+            // everythign went fine
+            alert('Success')
+        } else {
+            alert(result.error)
+        }
     }
 return(
     <div className="container">
@@ -34,13 +41,13 @@ return(
             <div className="form-fields">
                 <fieldset>
                     <label for="Username">Username or Email Address</label>
-                    <input type="text" placeholder="Username" autocomplete="off" classname="username" id="Username"
+                    <input type="text" placeholder="Username" autocomplete="off" classname="username" id="username"
                         
                     />
                 </fieldset>
                 <fieldset>
                     <label for="password" className="password" id="password">Password</label>
-                    <input type="password" placeholder="Password" autocomplete="off" className="password" id="Password"
+                    <input type="password" placeholder="Password" autocomplete="off" className="password" id="p      assword"
                     />
                 </fieldset>
             </div>
