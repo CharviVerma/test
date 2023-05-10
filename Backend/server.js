@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const UrlInterval = require('./models/UrlInterval');
 const UrlResponse = require('./models/UrlResponse');
+const Users = require('./models/Users')
 const startCronJob = require('./cron');
 
 var allowCrossDomain = function(req, res, next) {
