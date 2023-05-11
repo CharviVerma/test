@@ -56,13 +56,13 @@ return(
             <div className="form-fields">
                 <fieldset>
                     <label for="Username">Username</label>
-                    <input type="text" placeholder="Username" autocomplete="off" classname="username" id="username"
+                    <input type="text" placeholder="Username" autoComplete="off" className="username" id="username"
                         value={username} onChange={handleUsernameChange} 
                     />
                 </fieldset>
                 <fieldset>
                     <label for="email" className="email" id="password">Email</label>
-                    <input type="email" placeholder="Email" autocomplete="off" className="email" id="email"
+                    <input type="email" placeholder="Email" autoComplete="off" className="email" id="email"
                     value={email} onChange={handleEmailChange}
                     />
                 </fieldset>

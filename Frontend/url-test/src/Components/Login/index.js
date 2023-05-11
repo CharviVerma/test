@@ -34,7 +34,7 @@ return(
                 <fieldset>
                     <label for="Username">Username or Email Address</label>
                     {error && <div>{error}</div>}
-                    <input type="text" placeholder="Username" autocomplete="off" classname="username" id="username"
+                    <input type="text" placeholder="Username" autoComplete="off" className="username" id="username"
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
                         required
@@ -42,7 +42,7 @@ return(
                 </fieldset>
                 <fieldset>
                     <label for="password" className="password" id="password">Password</label>
-                    <input type="password" placeholder="Password" autocomplete="off" className="password" id="password"
+                    <input type="password" placeholder="Password" autoComplete="off" className="password" id="password"
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                     required
