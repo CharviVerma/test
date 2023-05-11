@@ -7,7 +7,9 @@ const UrlInterval = require('./models/UrlInterval');
 const UrlResponse = require('./models/UrlResponse');
 const User = require('./models/User')
 const startCronJob = require('./cron');
+const dotenv = require('dotenv');
 
+require('dotenv').config({path:'./config/config.env'});
 const app = express()
 
 var allowCrossDomain = function(req, res, next) {
@@ -45,7 +47,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
 });
 // db.createCollection('users', function(err, collection) {});
 
-router.post('/register', async (req, res) => {
+app.post('/register', async (req, res) => {
   try {
     // hash password
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -64,7 +66,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   try {
     // find user by email
     const user = await User.findOne({ username: req.body.username });
@@ -127,7 +129,7 @@ app.get('/url-entries', async (req, res) => {
     res.sendStatus(500);
   }
 });
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+app.listen(process.env.PORT,()=>{
+  console.log(`server started on PORT:${process.env.PORT} in ${process.env.NODE_ENV} node.`)
+})
 
