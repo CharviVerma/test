@@ -4,10 +4,11 @@ import React  from 'react';
 
 const redirectPage = () => {
 
-  return 
+  return (
   <div>
     <p>Helloooooooooooooo</p>
   </div>
+  )
 };
 
 export default redirectPage;
