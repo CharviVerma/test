@@ -7,7 +7,7 @@ const UrlTable = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("/url-entries");
+      const result = await axios.get("http://localhost:3000/url-entries");
       setData(result.data.slice(0, 20));
     };
     fetchData();
