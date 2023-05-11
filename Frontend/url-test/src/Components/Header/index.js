@@ -3,6 +3,8 @@ import "./style.scss";
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from './first.png';
+import Login from "../../Components/Login/index.js"
+import Signup from "../../Components/Signup/index.js"
 
 
 const Header = () => {
@@ -16,10 +18,10 @@ const Header = () => {
     <div className="collapse justify-content-end navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
       <li className="nav-item1">
-      <Link className="nav-link" to="/">Login</Link>
+      <Link className="nav-link" to="/Login">Login</Link>
         </li>
         <li className="nav-item2">
-          <button className="Signup btn btn-success"><a className="nav-link text-white p-0"  href="/">Sign Up</a></button>
+          <button className="Signup btn btn-success"><a className="nav-link text-white p-0"  href="/Signup">Sign Up</a></button>
         </li>
       </ul>
     </div>
