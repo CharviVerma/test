@@ -1,5 +1,6 @@
 import "./style.scss";
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import axios from "axios";
 import logo from './pretty.png';
 
@@ -7,6 +8,7 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const history = useHistory();
   
     const handleSubmit = async (event) => {
       event.preventDefault();
@@ -16,7 +18,7 @@ const Login = () => {
         const { token } = response.data;
         localStorage.setItem('token', token); // Store the JWT token in local storage
         setError('');
-        // Redirect to home page or dashboard
+        history.push(`/users/${response.data.user._id}`);
       } catch (error) {
         setError(error.response.data.message);
       }
