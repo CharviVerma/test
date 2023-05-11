@@ -1,8 +1,8 @@
 const cron = require('node-cron');
-const request = require('request-promise-native');
 const { performance } = require('perf_hooks');
 const UrlInterval = require('./models/UrlInterval');
 const UrlResponse = require('./models/UrlResponse');
+const  axios = require('axios');
 let numJobs = 2
 
 module.exports = async function startCronJob(urlInterval) {
@@ -12,13 +12,12 @@ module.exports = async function startCronJob(urlInterval) {
       try {
         const startTime = performance.now();
 
-        const response = await request.get(resolveWithFullResponse, true, url);
+        const response = await axios.get(url);
 
         const endTime = performance.now();
 
         const responseTime = endTime - startTime;
-        console.log(response)
-        const responseStatus = response.statusCode;
+        const responseStatus = response.status;
 
         const urlResponse = new UrlResponse({
           url: url,

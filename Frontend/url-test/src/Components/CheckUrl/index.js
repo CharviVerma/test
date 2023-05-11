@@ -33,7 +33,7 @@ const CheckUrl = () => {
 
   const saveFormDataToDatabase = async (url, timeInterval) => {
     try {
-      const response = await axios.post("http://localhost:3000/url-interval", {
+      const response = await axios.post("http://localhost:3000/api/url-interval", {
         url: url,
         timeInterval: timeInterval,
       });
