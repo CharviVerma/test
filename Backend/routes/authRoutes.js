@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
         return res.status(401).json({ message: 'Authentication failed' });
       }
       // generate access token
-      const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+      const accessToken = jwt.sign({ userId: user._id.toHexString() },`${process.env.JWT_SECRET_KEY}`);
       res.json({ accessToken: accessToken });
     } catch (error) {
       console.error(error);

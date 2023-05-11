@@ -15,8 +15,8 @@ const Login = () => {
   
       try {
         const response = await axios.post('http://localhost:3000/api/login', { username, password });
-        const { token } = response.data;
-        localStorage.setItem('token', token); // Store the JWT token in local storage
+        const { accessToken } = response.data;
+        localStorage.setItem('token', accessToken); // Store the JWT token in local storage
         setError('');
         navigate(`/users/${response.data.user._id}`);
       } catch (error) {
