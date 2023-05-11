@@ -34,7 +34,7 @@ const Signup = () => {
           }
       
           try {
-            const response = await axios.post('http://localhost:3000/register', {
+            const response = await axios.post('/register', {
               username,
               email,
               password,
@@ -52,7 +52,7 @@ return(
     <div className="first form col-lg-8">
         <div className="row box">
             <div className="col-lg-6">
-        <form action="session/" method="post" id="sign-in-form">
+        <form action="session/" method="post" id="sign-in-form" onSubmit={handleSubmit}>
             <div className="form-fields">
                 <fieldset>
                     <label for="Username">Username</label>

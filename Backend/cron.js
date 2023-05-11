@@ -12,18 +12,18 @@ module.exports = async function startCronJob(urlInterval) {
       try {
         const startTime = performance.now();
 
-        const response = await request.get(url);
+        const response = await request.get(resolveWithFullResponse, true, url);
 
         const endTime = performance.now();
 
         const responseTime = endTime - startTime;
         console.log(response)
-        // const responseStatus = response.statusCode;
+        const responseStatus = response.statusCode;
 
         const urlResponse = new UrlResponse({
           url: url,
           responseTime: responseTime,
-          // responseStatus: responseStatus,
+          responseStatus: responseStatus,
           url_interval_id: urlInterval._id,
           createdAt: new Date(),
         });

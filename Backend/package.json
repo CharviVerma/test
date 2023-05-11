@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "apollo-server-express": "^3.12.0",
     "bcrypt": "^5.1.0",
