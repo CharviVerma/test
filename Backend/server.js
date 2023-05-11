@@ -1,9 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const UrlInterval = require('./models/UrlInterval');
 const UrlResponse = require('./models/UrlResponse');
-const Users = require('./models/Users')
+const User = require('./models/User')
 const startCronJob = require('./cron');
 
 const app = express()
@@ -30,7 +32,7 @@ async function makeRequest() {
 makeRequest();
 app.use(allowCrossDomain);
 
-const port = 3000;
+const port = process.env.port;
 app.use(bodyParser.json());
 
 mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
@@ -59,6 +61,27 @@ router.post('/register', async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error registering user' });
+  }
+});
+
+router.post('/login', async (req, res) => {
+  try {
+    // find user by email
+    const user = await User.findOne({ username: req.body.username });
+    if (!user) {
+      return res.redirect('/signup');
+    }
+    // check if password is correct
+    const match = await bcrypt.compare(req.body.password, user.password);
+    if (!match) {
+      return res.status(401).json({ message: 'Authentication failed' });
+    }
+    // generate access token
+    const accessToken = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+    res.json({ accessToken: accessToken });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error authenticating user' });
   }
 });
 
