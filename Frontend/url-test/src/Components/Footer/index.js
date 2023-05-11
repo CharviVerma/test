@@ -12,8 +12,8 @@ const table = () => {
         <p>Contact us</p>
         <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
          aria-label="Email Form" data-autopilot-anywhere="0001556802155671_0b4f3c0100784d1da1b8ec60f959a3f3">
-          <input type="text" class="text-field w-input" maxlength="256" name="name-2" data-name="Name 2" 
-          placeholder="Your e-mail" id="name-2" required="" />
+          <input type="text" class="text-field w-input" maxLength="256" name="name-2" data-name="Name 2" 
+          placeHolder="Your e-mail" id="name-2" required="" />
           <input type="submit" value="subscribe"
            data-wait="Please wait..." class="subscribebutton w-button" />
 
@@ -37,8 +37,8 @@ const table = () => {
     <div class="footerbottomleftside">
       <p class="footersmalltext">© 2023 BrokenLinks. India All Rights Reserved</p>
       <div class="termcondblock">
-        <a href="#" class="footerlink">privacy policy</a>
-        <a href="#" class="footerlink">Terms And conditions</a>
+        <a href="#" className="footerlink">privacy policy</a>
+        <a href="#" className="footerlink">Terms And conditions</a>
         </div>
         </div>
     </div>
