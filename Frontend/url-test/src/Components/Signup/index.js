@@ -2,6 +2,7 @@ import "./style.scss";
 import React, { useState } from "react";
 import logo from './pretty.png';
 import axios from 'axios';
+import { Navigate } from "react-router-dom";
 
 const Signup = () => {
         const [username, setUsername] = useState('');
