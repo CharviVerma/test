@@ -43,6 +43,25 @@ mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
 });
 // db.createCollection('users', function(err, collection) {});
 
+router.post('/register', async (req, res) => {
+  try {
+    // hash password
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    // create new user
+    const newUser = new User({
+      username: req.body.usernme,
+      email: req.body.email,
+      password: hashedPassword,
+    });
+    // save user to database
+    const savedUser = await newUser.save();
+    res.json({ message: 'User created', user: savedUser });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error registering user' });
+  }
+});
+
 app.post('/url-interval', async (req, res) => {
   try {
     const { url, timeInterval } = req.body;
