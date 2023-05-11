@@ -37,7 +37,7 @@ router.post('/register', async (req, res) => {
       }
       // generate access token
       const accessToken = jwt.sign({ userId: user._id.toHexString() },`${process.env.JWT_SECRET_KEY}`);
-      res.json({ accessToken: accessToken });
+      res.json({ accessToken: accessToken, user: {_id: user._id} });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Error authenticating user' });
