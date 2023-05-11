@@ -3,8 +3,8 @@ import "./style.scss";
 import React from "react";
 import { Link } from 'react-router-dom';
 import logo from './first.png';
-import Login from "../../Components/Login/index.js"
-import Signup from "../../Components/Signup/index.js"
+// import Login from "../../Components/Login/index.js"
+// import Signup from "../../Components/Signup/index.js"
 
 
 const Header = () => {
