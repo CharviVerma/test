@@ -1,9 +1,9 @@
 import "./style.scss";
 import React, { useState } from "react";
 import logo from './pretty.png';
+import axios from 'axios';
 
 const Signup = () => {
-    function Signup() {
         const [username, setUsername] = useState('');
         const [email, setEmail] = useState('');
         const [password, setPassword] = useState('');
@@ -34,7 +34,7 @@ const Signup = () => {
           }
       
           try {
-            const response = await axios.post('http://localhost:3000/signup', {
+            const response = await axios.post('http://localhost:3000/register', {
               username,
               email,
               password,
@@ -55,14 +55,27 @@ return(
         <form action="session/" method="post" id="sign-in-form">
             <div className="form-fields">
                 <fieldset>
-                    <label for="Username">Username or Email Address</label>
+                    <label for="Username">Username</label>
                     <input type="text" placeholder="Username" autocomplete="off" classname="username" id="username"
-                        
+                        value={username} onChange={handleUsernameChange} 
+                    />
+                </fieldset>
+                <fieldset>
+                    <label for="email" className="email" id="password">Email</label>
+                    <input type="email" placeholder="Email" autocomplete="off" className="email" id="email"
+                    value={email} onChange={handleEmailChange}
                     />
                 </fieldset>
                 <fieldset>
                     <label for="password" className="password" id="password">Password</label>
                     <input type="password" placeholder="Password" autocomplete="off" className="password" id="password"
+                    value={password} onChange={handlePasswordChange} 
+                    />
+                </fieldset>
+                <fieldset>
+                    <label for="confirmPassword" className="confirmPassword" id="confirmPassword">Confirm Password</label>
+                    <input type="password" placeholder="Confirm Password" autocomplete="off" className="confirmPassword" id="confirmPassword"
+                    value={confirmPassword} onChange={handleConfirmPasswordChange}
                     />
                 </fieldset>
             </div>
@@ -81,37 +94,4 @@ return(
     </div>
 )
 }
-
-export default Signup;
-
-  return (
-    <div>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="text" value={username} onChange={handleUsernameChange} />
-        </label>
-        <br />
-        <label>
-          Email:
-          <input type="email" value={email} onChange={handleEmailChange} />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input type="password" value={password} onChange={handlePasswordChange} />
-        </label>
-        <br />
-        <label>
-          Confirm Password:
-          <input type="password" value={confirmPassword} onChange={handleConfirmPasswordChange} />
-        </label>
-        <br />
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
-  );
-}
-
 export default Signup;
