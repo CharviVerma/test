@@ -12,7 +12,7 @@ const Signup = () => {
       
         const handleUsernameChange = (event) => {
           setUsername(event.target.value);
-        };
+        }; 
       
         const handleEmailChange = (event) => {
           setEmail(event.target.value);
