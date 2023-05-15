@@ -6,9 +6,10 @@ const table = () => {
   return <div id="footer_section">
     <div id="footerMainRow">
     <div className="container">
-      <div className="row">
-      <div className="col-lg-4"><img src= {logo} alt='profile' className='profile'></img></div>
-      <div className="col-lg-4">
+    <div className="col-lg-10">
+      <div className="row box">
+      <div className="col-lg-4 logo"><img src= {logo} alt='profile'></img></div>
+      <div className="col-lg-4 contactUsForm">
         <p>Contact us</p>
         <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
          aria-label="Email Form" data-autopilot-anywhere="0001556802155671_0b4f3c0100784d1da1b8ec60f959a3f3">
@@ -16,14 +17,14 @@ const table = () => {
           placeHolder="Your e-mail" id="name-2" required="" />
           <input type="submit" value="subscribe"
            data-wait="Please wait..." class="subscribebutton w-button" />
-
         </form>
       </div>
-      <div className="col-lg-4">
+      <div className="col-lg-4 socials">
         <p></p>
         <p></p>
         <p></p>
         </div>
+      </div>
       </div>
     </div>
     <div>
