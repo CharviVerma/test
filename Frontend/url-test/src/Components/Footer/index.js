@@ -5,9 +5,9 @@ const table = () => {
 
   return <div id="footer_section">
     <div id="footerMainRow">
-    <div className="container">
-    <div className="col-lg-10">
-      <div className="row box">
+    <div className="container footer">
+    <div className="col-lg-10 footer-col">
+      <div className="row box.one">
       <div className="col-lg-4 logo"><img src= {logo} alt='profile'></img></div>
       <div className="col-lg-4 contactUsForm">
         <p>Contact us</p>
