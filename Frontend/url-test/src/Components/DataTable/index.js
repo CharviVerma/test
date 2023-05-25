@@ -27,6 +27,8 @@ const DataTable = () => {
 console.log(error)
     }
   }
+
+  
   const dataWithIndex = data.map((item, index) => ({
     ...item,
     index: index + 1,
@@ -45,7 +47,7 @@ console.log(error)
                 <th>URL</th>
                 <th>Timestamp</th>
                 <th>Response Time</th>
-                <th>Status</th>
+                <th className="">Status</th>
               </tr >
             </thead>
             <tbody>
@@ -55,7 +57,7 @@ console.log(error)
                   <td>{item.url}</td>
                   <td>{formatDate(item.createdAt)}</td>
                   <td>{Math.round(item.responseTime)}</td>
-                  <td>{item.responseStatus}</td>
+                  <td className="condition">{item.responseStatus}</td>
                 </tr>
               ))}
             </tbody>
