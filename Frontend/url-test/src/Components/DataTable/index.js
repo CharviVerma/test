@@ -57,7 +57,7 @@ console.log(error)
                   <td>{item.url}</td>
                   <td>{formatDate(item.createdAt)}</td>
                   <td>{Math.round(item.responseTime)}</td>
-                  <td className="condition btn btn-success">{item.responseStatus}</td>
+                  <td className="condition btn btn-primary">{item.responseStatus}</td>
                 </tr>
               ))}
             </tbody>
