@@ -23,7 +23,7 @@ router.post('/url-interval', async (req, res) => {
       res.json(urlResponses);
     } catch (error) {
       console.error(error);
-      res.sendStatus(300);
+      res.sendStatus(400);
     }
   });
   
@@ -33,7 +33,7 @@ router.post('/url-interval', async (req, res) => {
       res.json(urlResponses);
     } catch (error) {
       console.error(error);
-      res.sendStatus(200);
+      res.sendStatus(400);
     }
   });
   
